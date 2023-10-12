@@ -3,10 +3,10 @@ import { ethers } from "hardhat";
 
 describe("Token", function () {
   it("Should return name Token", async function () {
-    const Token = await ethers.getContractFactory("Token");
-    const token = await Token.deploy();
+    const DAOToken = await ethers.getContractFactory("DAOToken");
+    const token = await DAOToken.deploy(200);
     await token.deployed();
 
-    expect(await token.name()).to.equal("Token");
+    expect(await token.name()).to.equal("DAO Token");
   });
 });
